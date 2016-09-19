@@ -2,6 +2,10 @@ public class Account{
       private int accountNumber;
       private double balance;
 
+      public Account(){
+            this.balance = 0.0;
+      }
+
       public Account(int acc, double bal){
          this.accountNumber = acc;
          this.balance = bal;

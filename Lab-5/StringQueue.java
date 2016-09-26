@@ -40,6 +40,23 @@ public class StringQueue {
 			return elements[max];
 		}
 	}
+	public String dequeue(int x){
+		if(count <= 0) {
+			throw new ArrayIndexOutOfBoundsException("Error!");
+		} else {
+			if(x == 0){
+				dequeue();
+			}
+			else{
+				for(int i = x + 1; i < count; i++){
+					elements[max - i] = elements[max - (i + 1)];
+				}
+				count--;
+			}
+			return elements[max - 1];
+		}
+	}
+	
 	public String peek(){
 		if(count <= 0) {
 			throw new ArrayIndexOutOfBoundsException("Empty!");
@@ -55,22 +72,12 @@ public class StringQueue {
 		if(pos == count + 1){
 			queue(x);
 		}
-		//elements[pos - 1] = x;
 		else{
 			int i, ctr;
-			/*int i, ctr;
-			for(i = count, ctr = 0; ctr < max - pos - 1 && i >= 0; ctr++, i--){
+			for(i = count + 1, ctr = 0; ctr <= count - pos; ctr++, i--){
 				elements[max - i] = elements[max - (i - 1)]; 
 			}
-			elements[pos - 1] = x;*/
-			String temp, temp1;
-			temp = elements[max - pos - 1];
-			elements[max - pos - 1] = x;
-			for(i = pos; i <= count; i ++){
-				temp1 = elements[max - i];
-
-				
-			}
+			elements[max - pos] = x;
 			count++;
 		}
 	}
@@ -90,11 +97,20 @@ public class StringQueue {
 		StringQueue s = new StringQueue();
 		s.queue("igit");
 		s.queue("tae");
-		s.queue("tae1");		
-		//s.singit(2,"tobol");
+		s.queue("tae1");
+		s.queue("tae2");		
+		s.queue("tae3");
+		s.queue("tae4");
+		s.queue("tae5");
+		s.dequeue(2);
+		s.dequeue(2);
+		s.dequeue(2);
+		s.singit(2,"tobol");
 		System.out.println(s);
-		System.out.println(s.dequeue());
-		System.out.println(s.peek());
+		s.dequeue();
+		System.out.println(s);
+		//System.out.println(s.dequeue());
+		//System.out.println(s.peek());
 	}
 
 }

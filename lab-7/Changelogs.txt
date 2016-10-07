@@ -1,0 +1,17 @@
+//Changelogs//
+* transfered use skill option to RPG.java
+* transfered what skill to use to Hero.java
+* fixed skill usage eventhough your short of mana
+* transfered mp (mana) and mp getters and setters from RPGCharacter to Hero since Monster class wont be needing mana (for now)
+* checked whether player choice is within the number of options (e.g. use skill option and skill options and hero class)
+* removed unused variables and functions
+* different mana cost on every skill
+* different level of evasiveness on every hero
+* monster now has 40% chance to cast a healing spell while attacking
+* removed codes that does not help in improving the speed of execution (e.g. assigning something to a variable before returning it)
+* removed redundant codes and instead created a class for it
+* override toString() method on Hero class and monster class {
+		toString @hero class displays [hero type name, hp, mp]
+		toString @monster class displays [moster name, hp]
+	}
+*ambot unsa pa

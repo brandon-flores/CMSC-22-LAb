@@ -1,1 +1,1 @@
-# CMSC-22-LAb
+# CMSC-22-LAB

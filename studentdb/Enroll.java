@@ -6,7 +6,6 @@ public class Enroll {
     Student a = new Student();
     Scanner sc = new Scanner(System.in);
     String ans;
-    //System.out.println(l.get(1).32getStudentNum());
     System.out.println("STUDENT INFORMATION");
     System.out.println("Enter Student Number: ");
     a.setStudentNum(sc.nextLine());
@@ -73,7 +72,6 @@ public class Enroll {
     try {
 
             File file = new File("save.out");
-            // if file doesnt exists, then create it
             if (!file.exists()) {
                 file.createNewFile();
             }
@@ -92,7 +90,6 @@ public class Enroll {
               bw.write(stud.getCourse());
               bw.newLine();
               bw.write(stud.getYearLevel() + "\n");
-              //bw.newLine();
             }
             
             bw.close();
@@ -125,7 +122,6 @@ public class Enroll {
             br = new BufferedReader(new FileReader("C:\\Users\\brand\\Desktop\\Lab 10\\save.out"));
             while ((sCurrentLine = br.readLine()) != null) {
               
-             // System.out.println(sCurrentLine);
               if(ctr%6 == 1) a.setStudentNum(sCurrentLine);  
               if(ctr%6 == 2) a.setFirstName(sCurrentLine);
               if(ctr%6 == 3) a.setMiddleInitial(sCurrentLine.charAt(0));
@@ -147,7 +143,6 @@ public class Enroll {
                 ex.printStackTrace();
             }
         }
-        //System.out.println(myList.get(0).getStudentNum());
         Scanner sc = new Scanner(System.in);
         boolean status = true;
         int choice = 0;
@@ -162,7 +157,7 @@ public class Enroll {
             System.out.println("6. Exit");
             System.out.println("Enter number of choice: ");
             choice = sc.nextInt();
-            if(choice >= 1 && choice <= 5) break;
+            if(choice >= 1 && choice <= 6) break;
           }while(true);
           switch (choice){
           case 1:

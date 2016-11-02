@@ -15,6 +15,7 @@ public class Calculator extends JFrame{
     BigDecimal a, b, answer;
     int ope;
     boolean flag = false;
+    boolean nega = true;
 
     Calculator(){
         button1 = new JButton("1");
@@ -41,7 +42,7 @@ public class Calculator extends JFrame{
         display.setBounds(0, 0, 400, 100);
         display.setEditable(false);
         display.setFont(new Font("Times New Roman", Font.BOLD, 25));
-        display.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
+        //display.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         clear.setBounds(0, 100, 200, 75);
         clear.setFont(f);
         allclear.setBounds(200, 100, 200, 75);
@@ -173,23 +174,33 @@ public class Calculator extends JFrame{
                 display.setText("+");
                 ope = 1;
                 flag = true;
+                nega = true;
             }
             if(e.getSource() == buttonminus){
-                a = new BigDecimal(display.getText());
-                display.setText("-");
-                flag = true;
-                ope = 2;
+                if(nega){
+                    display.setText("-");
+                    flag = false;
+                    nega = false;
+                }else{
+                    a = new BigDecimal(display.getText());
+                    display.setText("-");
+                    flag = true;
+                    ope = 2;
+                    nega = true;
+                }
             }
             if(e.getSource() == buttontimes){
                 a = new BigDecimal(display.getText());
                 display.setText("*");
                 flag = true;
+                nega = true;
                 ope = 3;
             }
             if(e.getSource() == buttondivide){
                 a = new BigDecimal(display.getText());
                 display.setText("/");
                 flag = true;
+                nega = true;
                 ope = 4;
             }
             if(e.getSource() == bequals){
@@ -200,6 +211,7 @@ public class Calculator extends JFrame{
                 if(ope == 4) answer = a.divide(b);
                 display.setText(answer.toEngineeringString());
                 flag = true;
+                nega = false;
             }
             if(e.getSource() == bpoint){
                 display.setText(display.getText() + ".");

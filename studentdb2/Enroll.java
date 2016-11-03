@@ -29,7 +29,7 @@ public class Enroll {
         a.setLastName(sc.nextLine());
         System.out.println("Enter Course: ");
         a.setCourse(sc.nextLine());
-        System.out.println("Enter Year Crush Name: ");
+        System.out.println("Enter Crush Name: ");
         a.setCrushName(sc.nextLine());
         System.out.println("Enter Course Code: ");
         c.setCourseCode(sc.nextLine());
@@ -78,7 +78,7 @@ public class Enroll {
             l.get(i).setLastName(sc.nextLine());
             System.out.println("Enter New Course: ");
             l.get(i).setCourse(sc.nextLine());
-            System.out.println("Enter Year Crush Name: ");
+            System.out.println("Enter Crush Name: ");
             l.get(i).setCrushName(sc.nextLine());
             System.out.println("Enter Course Code: ");
             l.get(i).getFaveSubject().setCourseCode(sc.next());
